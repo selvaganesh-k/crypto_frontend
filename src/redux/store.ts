@@ -4,8 +4,13 @@ import {
   type ThunkAction,
 } from "@reduxjs/toolkit";
 
+// Basic reducer to fix the store configuration
+const rootReducer = (state = {}, action: Action) => {
+  return state;
+};
+
 export const store = configureStore({
-  reducer: {},
+  reducer: rootReducer,
 });
 
 export type AppDispatch = typeof store.dispatch;
