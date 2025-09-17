@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { TrendingUp, TrendingDown, BarChart3, Activity, AlertCircle } from "lucide-react";
+import { TrendingUp, TrendingDown, Activity, AlertCircle } from "lucide-react";
 
 interface CoinChartProps {
   coinId: string;
@@ -32,20 +32,19 @@ const CoinChart: React.FC<CoinChartProps> = ({
         setLoading(true);
         setError(false);
         
-        // Simulated data for demo - replace with your actual API call
-        const mockPrices: [number, number][] = Array.from({ length: 20 }, (_, i) => [
-          Date.now() - (19 - i) * 3600000, // hourly data for last 20 hours
-          Math.random() * 1000 + 30000 + Math.sin(i * 0.5) * 5000
-        ]);
+        // // Simulated data for demo - replace with your actual API call
+        // const mockPrices: [number, number][] = Array.from({ length: 20 }, (_, i) => [
+        //   Date.now() - (19 - i) * 3600000, // hourly data for last 20 hours
+        //   Math.random() * 1000 + 30000 + Math.sin(i * 0.5) * 5000
+        // ]);
         
-        setPrices(
-          mockPrices.map((p: [number, number]) => ({
-            time: p[0],
-            price: p[1],
-          }))
-        );
+        // setPrices(
+        //   mockPrices.map((p: [number, number]) => ({
+        //     time: p[0],
+        //     price: p[1],
+        //   }))
+        // );
         
-        /* Uncomment for actual API call
         const response = await axios.get<MarketChartResponse>(
           `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart`,
           {
@@ -58,7 +57,6 @@ const CoinChart: React.FC<CoinChartProps> = ({
             price: p[1],
           }))
         );
-        */
       } catch (error) {
         console.error("Error fetching coin prices:", error);
         setError(true);

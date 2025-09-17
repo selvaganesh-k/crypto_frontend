@@ -5,7 +5,7 @@ import {
 } from "@reduxjs/toolkit";
 
 // Basic reducer to fix the store configuration
-const rootReducer = (state = {}, action: Action) => {
+const rootReducer = (state = {}, _action: Action) => {
   return state;
 };
 

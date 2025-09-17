@@ -1,9 +1,9 @@
 {
-  "name": "project-name",
+  "name": "crypto-tracker",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "author": "Your Name",
+  "author": "Selvaganesh K",
   "license": "MIT",
   "scripts": {
     "start": "vite --open",
